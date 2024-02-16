@@ -40,8 +40,6 @@ public class CursoService {
             // Actualizar los campos con los datos proporcionados
             if (cursoData.getNombreCurso() != null) curso.setNombreCurso(cursoData.getNombreCurso());
             if (cursoData.getProfesor() != null) curso.setProfesor(cursoData.getProfesor());
-            if (cursoData.getEstudiante() != null) curso.setEstudiante(cursoData.getEstudiante());
-
             // Guardar los cambios
             Curso userSaved = cursoRepository.save(curso);
             return ResponseEntity.ok(userSaved);

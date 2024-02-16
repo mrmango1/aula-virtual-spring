@@ -1,6 +1,5 @@
 package com.itsqmet.aulavirtualspring.services;
 
-import com.itsqmet.aulavirtualspring.entities.Estudiante;
 import com.itsqmet.aulavirtualspring.entities.Profesor;
 import com.itsqmet.aulavirtualspring.repositories.ProfesorRepository;
 import org.springframework.beans.factory.annotation.Autowired;

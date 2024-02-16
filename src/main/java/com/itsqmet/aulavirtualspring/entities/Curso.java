@@ -21,9 +21,9 @@ public class Curso {
     private Profesor profesor;
 
     // Estudiantes
-    @ManyToOne
-    @JoinColumn(name = "estudiante_id", referencedColumnName = "id")
-    private Estudiante estudiante;
+    // @ManyToOne
+    // @JoinColumn(name = "estudiante_id", referencedColumnName = "id")
+    // private Estudiante estudiante;
 
     // Calificaciones
 //    @OneToMany(mappedBy = "curso")

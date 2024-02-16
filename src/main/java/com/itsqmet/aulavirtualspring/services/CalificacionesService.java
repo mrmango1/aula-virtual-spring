@@ -1,6 +1,7 @@
 package com.itsqmet.aulavirtualspring.services;
 
 import com.itsqmet.aulavirtualspring.entities.Calificaciones;
+import com.itsqmet.aulavirtualspring.entities.Curso;
 import com.itsqmet.aulavirtualspring.repositories.CalificacionesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +17,25 @@ public class CalificacionesService {
     CalificacionesRepository calificacionesRepository;
 
     // GET
-    @GetMapping("/getCalificaciones")
+    @GetMapping("/getAllCalificaciones")
     public List<Calificaciones> getCalificaciones() {
         return calificacionesRepository.findAll();
+    }
+
+    // GET
+    @PostMapping("/getEstudiantesByCurso")
+    public List<Calificaciones> getEstudiantesByCurso(@RequestBody Curso curso) {
+        System.out.println(curso);
+        return calificacionesRepository.findEstudiantesByCurso(curso.getId());
+    }
+
+    // GET
+    @PostMapping("/getCalificaciones")
+    public List<Calificaciones> getCalificacionesByCurso(@RequestBody Calificaciones calificaciones) {
+        System.out.println(calificaciones);
+        int idCurso = calificaciones.getCurso().getId();
+        int idEstudiante = calificaciones.getEstudiante().getId();
+        return calificacionesRepository.getCalificaciones(idCurso, idEstudiante);
     }
 
     // CREAR
